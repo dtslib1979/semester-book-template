@@ -1,0 +1,9 @@
+{
+  "_note": "인쇄소 프로필. verified=false 값은 일반적인 기본값이다 — 올리기 전에 그 인쇄소 공식 작업 안내로 확인하고 고친 뒤 verified=true로 바꾼다.",
+  "bookk": {"name": "부크크(POD)", "verified": false, "sizes": ["46판", "A5", "B6", "신국판", "크라운판", "A4"], "bleed_mm": 3, "pad_to": 2, "min_pages": 50, "max_pages": 700,
+            "papers": {"백색모조 80g": 0.05, "미색모조 80g": 0.055, "백색모조 100g": 0.065}, "upload": ["interior.pdf", "cover_cmyk.pdf"], "how": "부크크 작가 페이지 → 책 만들기 → 원고 · 표지 PDF 업로드"},
+  "kyobo_pod": {"name": "교보문고 POD", "verified": false, "sizes": ["46판", "A5", "신국판", "B6"], "bleed_mm": 3, "pad_to": 2, "min_pages": 48, "max_pages": 600,
+            "papers": {"백색모조 80g": 0.05, "미색모조 80g": 0.055}, "upload": ["interior.pdf", "cover_cmyk.pdf"], "how": "교보 POD 출판 신청 화면에서 원고 · 표지 PDF 업로드"},
+  "local": {"name": "지역 디지털 인쇄소(직접 맡김)", "verified": false, "sizes": ["46판", "A5", "B6", "신국판", "크라운판", "A4"], "bleed_mm": 3, "pad_to": 4, "min_pages": 1, "max_pages": 1000,
+            "papers": {"백색모조 80g": 0.05, "미색모조 80g": 0.055, "백색모조 100g": 0.065, "아트지 120g": 0.1}, "upload": ["interior.pdf", "cover_cmyk.pdf", "작업지시서.txt"], "how": "이메일 · 웹하드로 PDF와 작업지시서를 보내고 부수 · 종이 · 제본(무선) 견적 요청"}
+}

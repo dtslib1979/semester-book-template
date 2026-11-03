@@ -1,0 +1,4 @@
+weasyprint==70.0
+pypdf
+markdown
+python-docx

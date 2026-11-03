@@ -1,0 +1,36 @@
+name: 책 굽기
+on:
+  push:
+    branches: [main]
+    paths: ["notes/**", "engine/**", ".github/workflows/book.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency: { group: pages, cancel-in-progress: true }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 글꼴 · 인쇄 도구
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-nanum fonts-noto-cjk ghostscript libpango-1.0-0 libpangoft2-1.0-0 >/dev/null
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: 엔진 설치
+        run: pip install -q -r engine/requirements.txt
+      - name: 책 굽기 (웹 · 인쇄본 · 전자책)
+        run: python engine/build_all.py notes site
+      - name: 인쇄소 꾸러미 보관
+        uses: actions/upload-artifact@v4
+        with: { name: print-pack, path: "site/print-pack.zip" }
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: site }
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: { name: github-pages, url: "${{ steps.d.outputs.page_url }}" }
+    steps:
+      - id: d
+        uses: actions/deploy-pages@v4

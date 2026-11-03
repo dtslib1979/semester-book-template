@@ -1,0 +1,15 @@
+{
+ "title": "나의 학기책",
+ "subtitle": "한 학기 노트를 한 권으로",
+ "author": "내 이름",
+ "publisher": "나의 서재",
+ "isbn": "",
+ "size": "A5",
+ "bleed_mm": 3,
+ "pad_to": 4,
+ "paper_mm_per_page": 0.05,
+ "chapters": ["00.md", "01.md"],
+ "blurb": "한 학기 동안 정리한 노트를 직접 엮은 책입니다.",
+ "cover_bg": "#0a1b14",
+ "cover_fg": "#efe0bd"
+}

@@ -1,0 +1,27 @@
+/* 토목스 프레스 — 내지 기본 스타일(일반 한국어 단행본 관례). 판형 · 여백은 press.py가 @page에 넣는다. */
+html{font-family:"NanumMyeongjo","Noto Serif CJK KR",serif;font-size:10.3pt;line-height:1.72;color:#000;text-align:justify;word-break:keep-all;hyphens:none}
+p{margin:0;text-indent:1em;orphans:2;widows:2}
+h1+p,h2+p,h3+p,blockquote+p,.noindent{text-indent:0}
+h1,h2,h3{font-family:"Noto Sans CJK KR","NanumBarunGothic",sans-serif;font-weight:700;line-height:1.35;break-after:avoid;text-align:left}
+h1.chapter{string-set:chapter content(text);break-before:right;font-size:18pt;margin:28mm 0 14mm;padding-top:0}
+h2{font-size:12pt;margin:7mm 0 3mm}h3{font-size:10.5pt;margin:5mm 0 2mm}
+blockquote{margin:3mm 0 3mm 5mm;padding-left:4mm;border-left:.6pt solid #000;font-size:9.5pt}
+blockquote p{text-indent:0}
+ul,ol{margin:2mm 0 2mm 6mm;padding:0}li{margin:.5mm 0}
+table{width:100%;border-collapse:collapse;font-size:8.6pt;margin:3mm 0;break-inside:avoid}th,td{border:.4pt solid #000;padding:1.2mm 1.5mm;text-align:left;vertical-align:top}th{font-family:"Noto Sans CJK KR","NanumBarunGothic",sans-serif}
+code,pre{font-family:"NanumGothicCoding",monospace;font-size:8.6pt}pre{white-space:pre-wrap;border:.4pt solid #000;padding:2mm;break-inside:avoid}
+hr{border:0;text-align:center;margin:4mm 0}hr::after{content:"＊ ＊ ＊";font-size:9pt}
+img{max-width:100%}
+.footnote{float:footnote;font-size:7.8pt;line-height:1.45;text-indent:0;text-align:left}
+::footnote-call{content:counter(footnote);font-size:65%;vertical-align:super;line-height:0}
+::footnote-marker{content:counter(footnote) ". "}
+/* 앞붙이 */
+.title-page{page:front;break-after:right;text-align:center;padding-top:55mm}
+.title-page h1.t{font-family:"Noto Sans CJK KR","NanumBarunGothic",sans-serif;font-size:24pt;margin:0 0 6mm;line-height:1.3}
+.title-page .sub{font-size:11pt;margin-bottom:30mm}.title-page .au{font-size:12pt}.title-page .pub{margin-top:60mm;font-family:"Noto Sans CJK KR","NanumBarunGothic",sans-serif;font-size:10pt}
+.toc{page:front;break-after:right}.toc h2{font-size:14pt;margin:18mm 0 8mm}
+.toc ol{list-style:none;margin:0;padding:0}.toc li{display:flex;margin:2.2mm 0;font-size:10.5pt}
+.toc li a{color:#000;text-decoration:none;flex:1}.toc li a::after{content:leader(".") target-counter(attr(href), page)}
+.colophon{page:back;break-before:right;font-size:8.6pt;line-height:1.75;padding-top:120mm}
+.colophon table{font-size:8.6pt;border:0}.colophon td{border:0;padding:.6mm 3mm .6mm 0}
+.colophon .t{font-family:"Noto Sans CJK KR","NanumBarunGothic",sans-serif;font-size:11pt;margin-bottom:4mm}
